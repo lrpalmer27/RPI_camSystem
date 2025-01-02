@@ -30,8 +30,8 @@ CurrentTime=datetime.datetime.now()
 
 while StartingTime < (CurrentTime + timedelta(hours=PeriodOfTime)):
     CurrentTime=(datetime.datetime.now()).replace(microsecond=0)
-    CurrentTime=str(CurrentTime).replace(':',"-")
-    CurrentTime=CurrentTime.replace(" ","_")
-    camera.capture(rf"{SaveFolder}/{CurrentTime}.png")
+    CtimeStr=str(CurrentTime).replace(':',"-")
+    CtimeStr=CtimeStr.replace(" ","_")
+    camera.capture(rf"{SaveFolder}/{CtimeStr}.png")
     print(f'Picture taken at {CurrentTime} & saved.')
     time.sleep(TimeDelay)
